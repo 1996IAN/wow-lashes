@@ -169,7 +169,7 @@ function Field({ label, error, children, className }: { label: string; error?: s
     <div className={className}>
       <span className="mb-2 block font-label text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted">{label}</span>
       {children}
-      {error && <span className="mt-1.5 block text-xs text-red-700">{error}</span>}
+      {error && <span className="mt-1.5 block text-xs text-red-400">{error}</span>}
     </div>
   );
 }

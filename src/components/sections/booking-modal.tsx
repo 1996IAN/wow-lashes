@@ -173,7 +173,7 @@ export function BookingModal({
                 <input className="field" inputMode="tel" value={d.phone} onChange={(e) => setD({ ...d, phone: e.target.value })} autoComplete="tel" placeholder="0712 345 678" />
               </Field>
               <Field label="Date" error={errors.date}>
-                <input className="field [color-scheme:light]" type="date" min={todayISO()} value={d.date} onChange={(e) => setD({ ...d, date: e.target.value, time: "" })} />
+                <input className="field [color-scheme:dark]" type="date" min={todayISO()} value={d.date} onChange={(e) => setD({ ...d, date: e.target.value, time: "" })} />
               </Field>
               <Field label="Start time" error={errors.time}>
                 <select className="field" value={d.time} onChange={(e) => setD({ ...d, time: e.target.value })} disabled={!slots.length}>
@@ -201,7 +201,7 @@ export function BookingModal({
 
           {step === 2 && (
             <motion.div key="done" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} className="mt-8">
-              <div className="relative overflow-hidden rounded-3xl border border-brand/50 bg-gradient-to-br from-[#ffc4d9] via-card to-ink p-6 shadow-[0_20px_60px_-20px_rgba(168,42,96,0.35)]">
+              <div className="relative overflow-hidden rounded-3xl border border-brand/50 bg-gradient-to-br from-[#3a1428] via-card to-ink p-6 shadow-[0_20px_60px_-20px_rgba(244,114,182,0.35)]">
                 <LashMark className="pointer-events-none absolute -right-6 -top-6 h-44 w-44 text-brand opacity-10" />
                 <div className="flex items-start justify-between">
                   <span className="font-display text-3xl font-bold text-heading">Wowlash Maison</span>
@@ -257,7 +257,7 @@ function Field({ label, error, children, className }: { label: string; error?: s
     <label className={cn("block", className)}>
       <span className="mb-2 block font-label text-[9px] font-bold uppercase tracking-[0.18em] text-muted">{label}</span>
       {children}
-      {error && <span className="mt-1.5 block text-xs text-red-700">{error}</span>}
+      {error && <span className="mt-1.5 block text-xs text-red-400">{error}</span>}
     </label>
   );
 }

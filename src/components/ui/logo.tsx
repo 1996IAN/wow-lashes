@@ -21,7 +21,7 @@ export function Logo({ className, size = "md" }: { className?: string; size?: "m
         width={640}
         height={313}
         className={cn(
-          "w-auto rounded-xl bg-black shadow-md ring-1 ring-black/10 transition-transform duration-300 group-hover:scale-[1.03]",
+          "w-auto rounded-xl bg-black shadow-md ring-1 ring-brand/30 transition-transform duration-300 group-hover:scale-[1.03]",
           size === "lg" ? "h-24 sm:h-28" : "h-[60px] sm:h-[68px]"
         )}
       />

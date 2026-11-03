@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* 70% pink canvas ("ink" is the page background, "charcoal" the alternate sections) */
-  --color-ink: #fcdce8;
-  --color-charcoal: #f9ccdd;
+  /* 70% black canvas ("ink" is the page background, "charcoal" the alternate sections) */
+  --color-ink: #0a0a0a;
+  --color-charcoal: #121212;
   /* 20% structure */
-  --color-card: #fff5f8;
-  --color-line: #f0b5cb;
-  --color-field: #ffffff;
-  /* 10% accent: deep rose */
-  --color-brand: #a82a60;
-  --color-brand-hot: #8e1f4e;
-  --color-on-brand: #ffffff;
+  --color-card: #181818;
+  --color-line: #2e2a2c;
+  --color-field: #151515;
+  /* 10% accent: pink */
+  --color-brand: #f472b6;
+  --color-brand-hot: #f9a8d4;
+  --color-on-brand: #0a0a0a;
   /* type */
-  --color-heading: #2b1420;
-  --color-soft: #4a2b39;
-  --color-muted: #6e4656;
+  --color-heading: #ffffff;
+  --color-soft: #f2f2f2;
+  --color-muted: #a6a6a6;
 
   --font-display: "Lora", "Georgia", serif;
   --font-label: "Montserrat", system-ui, sans-serif;
@@ -58,10 +58,10 @@
   @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-label text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-50;
 }
 @utility btn-primary {
-  @apply btn bg-brand text-on-brand hover:bg-brand-hot hover:shadow-[0_0_34px_-6px_rgba(168,42,96,0.6)];
+  @apply btn bg-brand text-on-brand hover:bg-brand-hot hover:shadow-[0_0_34px_-6px_rgba(244,114,182,0.6)];
 }
 @utility btn-outline {
-  @apply btn border border-heading/40 text-heading hover:border-heading hover:bg-heading hover:text-white;
+  @apply btn border border-heading/40 text-heading hover:border-heading hover:bg-heading hover:text-ink;
 }
 @utility field {
   @apply w-full rounded-xl border border-line bg-field px-4 py-3 text-sm text-heading placeholder:text-muted/60 outline-none transition focus:border-brand;
@@ -81,7 +81,7 @@
 }
 
 .glow-bg {
-  background-image: radial-gradient(60% 50% at 50% 0%, rgba(255, 255, 255, 0.45), transparent 70%);
+  background-image: radial-gradient(60% 50% at 50% 0%, rgba(244, 114, 182, 0.1), transparent 70%);
 }
 
 @keyframes marquee {

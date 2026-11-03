@@ -69,7 +69,7 @@ export function Pricing({ onSelect }: { onSelect: (serviceId: string, visit: Vis
                 className={cn(
                   "relative flex flex-col rounded-3xl border p-8 transition-transform duration-300 hover:-translate-y-1",
                   t.popular
-                    ? "border-brand bg-gradient-to-b from-[#ffc4d9] to-card shadow-[0_30px_80px_-30px_rgba(168,42,96,0.35)] lg:-my-4 lg:py-12"
+                    ? "border-brand bg-gradient-to-b from-[#3a1428] to-card shadow-[0_30px_80px_-30px_rgba(244,114,182,0.35)] lg:-my-4 lg:py-12"
                     : "border-line bg-card"
                 )}
               >

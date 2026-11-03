@@ -52,7 +52,7 @@ export function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="group card relative flex flex-col overflow-hidden p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/40 hover:shadow-[0_24px_50px_-24px_rgba(168,42,96,0.3)]"
+              className="group card relative flex flex-col overflow-hidden p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/40 hover:shadow-[0_24px_50px_-24px_rgba(244,114,182,0.3)]"
             >
               <div className="flex items-start justify-between">
                 <span className="font-display text-6xl leading-none text-brand">{String(i + 1).padStart(2, "0")}</span>
