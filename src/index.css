@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  /* 70% pink canvas ("ink" is the page background, "charcoal" the alternate sections) */
+  --color-ink: #fcdce8;
+  --color-charcoal: #f9ccdd;
+  /* 20% structure */
+  --color-card: #fff5f8;
+  --color-line: #f0b5cb;
+  --color-field: #ffffff;
+  /* 10% accent: deep rose */
+  --color-brand: #a82a60;
+  --color-brand-hot: #8e1f4e;
+  --color-on-brand: #ffffff;
+  /* type */
+  --color-heading: #2b1420;
+  --color-soft: #4a2b39;
+  --color-muted: #6e4656;
+
+  --font-display: "Lora", "Georgia", serif;
+  --font-label: "Montserrat", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+  body {
+    @apply bg-ink text-soft font-sans antialiased;
+    font-variant-numeric: lining-nums;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "clig" 0, "dlig" 0;
+    overflow-x: hidden;
+  }
+  em,
+  i,
+  cite {
+    font-style: normal;
+  }
+  ::selection {
+    background: var(--color-brand);
+    color: var(--color-on-brand);
+  }
+}
+
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+@utility display {
+  @apply font-display font-medium leading-[0.95] tracking-[-0.01em] text-heading;
+}
+@utility label {
+  @apply font-label text-[11px] font-bold uppercase tracking-[0.28em];
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-label text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-brand text-on-brand hover:bg-brand-hot hover:shadow-[0_0_34px_-6px_rgba(168,42,96,0.6)];
+}
+@utility btn-outline {
+  @apply btn border border-heading/40 text-heading hover:border-heading hover:bg-heading hover:text-white;
+}
+@utility field {
+  @apply w-full rounded-xl border border-line bg-field px-4 py-3 text-sm text-heading placeholder:text-muted/60 outline-none transition focus:border-brand;
+}
+@utility card {
+  @apply rounded-2xl border border-line bg-card;
+}
+
+/* soft film grain so the blacks feel photographic */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.glow-bg {
+  background-image: radial-gradient(60% 50% at 50% 0%, rgba(255, 255, 255, 0.45), transparent 70%);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 34s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}
